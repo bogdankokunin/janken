@@ -1,1 +1,1 @@
-# janken
+# kitsune-ken
