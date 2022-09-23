@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&family=Zen+Antique&display=swap');
+
+body {
+    margin: 0;
+    background-color: rgb(255, 254, 242);
+    color: rgb(99, 80, 63);
+    font-family: 'Zen Antique', serif;
+}
+
+header {
+    text-align: center;
+    font-size: 24px;
+}
+
+h1 {
+    font-size: 70px;
+    margin-bottom: 0px;
+}
+
+.instructions {
+    font-size: 25px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 35px auto;
+    max-width: 775px;
+    text-align: center;
+}
+
+.game-input {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border: 4px solid rgb(226, 194, 166);
+    border-radius: 15px;
+
+}
+
+.game-output {
+    display: flex;
+    flex-direction: row;
+    border: 4px solid rgb(226, 194, 166);
+    border-radius: 15px;
+}
+
+.enemy-role {
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+    border-right: 4px solid rgb(226, 194, 166);
+    align-items: center;
+}
+
+.enemy-role-img {
+    margin: 0px 40px 22px 40px;
+}
+
+.all-numbers {
+    font-size: 22px;
+    text-align: left;
+    margin: 0 15px;
+}
+
+
+
+
+
+.footer {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    background-color: rgb(250, 233, 217);
+    color: rgb(99, 80, 63);
+
+    width: 100%;
+    text-align: center;
+    
+    position: fixed;
+    bottom: 0px;
+}
+
+
+/* Animation, colors, imgs */
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all .3s;
+}
+
+.kitsune {
+    color: #ec7e5cff;
+    width: 155px;
+}
+
+.ryoushi {
+    color: #c0441aff;
+    width: 80px;
+}
+
+.shouya {
+    color: #ffa628ff;
+    width: 130px;
+}
+
+
+
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+.role-image {
+    margin: 40px 0;
+}

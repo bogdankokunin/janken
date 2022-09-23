@@ -5,8 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kitsune-ken</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
+    <header class="header">
+        <h1>三すくみの狐拳</h1>
+        <p class="instructions">
+            <span class="ryoushi">猟師</span>が<span class="kitsune">狐</span>に勝つ︱
+            <span class="kitsune">狐</span>が<span class="shouya">庄屋</span>に勝つ︱
+            <span class="shouya">庄屋</span>が<span class="ryoushi">猟師</span>に勝つ
+        </p> 
+    </header>
+
+    <main>
+        <div class="game-input">
+            <button class="ryoushi role-image"><img src="./resources/ryoushi.svg" width="80"></button>
+            <button class="kitsune role-image"><img src="./resources/kitsune.svg" width="155"></button>
+            <button class="shouya role-image"><img src="./resources/shouya.svg" width="130"></button>
+        </div>
+        <div class="game-output">
+            <div class="enemy-role">
+                <p class="role-name">敵の選択</p>
+                <img src="./resources/ryoushi.svg" width="80" class="enemy-role-img">
+            </div>
+            <div class="all-numbers">
+                <p class="rounds">回戦 : <span class="number-of-rounds"></span> </p>
+                <p class="score">敵の得点 : <span class="enemy-score"></span></p> 
+                <p>お客様の得点 : <span class="my-score"></span></p>
+                <p class="situation">結果：　<span class="result"></span></p>
+            </div>       
+        </div>
+    </main>
     
+        <div class="footer">
+            <p>Bogdan Kokunin - 2022</p>
+        </div>
+    </main>
+
 </body>
 </html>
