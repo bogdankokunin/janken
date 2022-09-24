@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kitsune-ken</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <header class="header">
@@ -20,28 +19,26 @@
 
     <main>
         <div class="game-input">
-            <button class="ryoushi role-image"><img src="./resources/ryoushi.svg" width="80"></button>
-            <button class="kitsune role-image"><img src="./resources/kitsune.svg" width="155"></button>
-            <button class="shouya role-image"><img src="./resources/shouya.svg" width="130"></button>
+            <button class="hunter role-image button"><img src="./resources/ryoushi.svg" width="80"></button>
+            <button class="fox role-image button"><img src="./resources/kitsune.svg" width="155"></button>
+            <button class="master role-image button"><img src="./resources/shouya.svg" width="130"></button>
         </div>
         <div class="game-output">
             <div class="enemy-role">
                 <p class="role-name">敵の選択</p>
-                <img src="./resources/ryoushi.svg" width="80" class="enemy-role-img">
+                <img src="" width="80" class="enemy-role-img">
             </div>
             <div class="all-numbers">
-                <p class="rounds">回戦 : <span class="number-of-rounds"></span> </p>
-                <p class="score">敵の得点 : <span class="enemy-score"></span></p> 
-                <p>お客様の得点 : <span class="my-score"></span></p>
-                <p class="situation">結果：　<span class="result"></span></p>
+                <p class="rounds"></p>
+                <p class="enemy-score"></p> 
+                <p class="my-score"></p>
+                <p class="situation"></p>
             </div>       
         </div>
     </main>
-    
-        <div class="footer">
-            <p>Bogdan Kokunin - 2022</p>
-        </div>
-    </main>
-
+    <footer class="footer">
+        <p>Bogdan Kokunin - 2022</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
