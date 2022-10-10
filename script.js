@@ -1,10 +1,15 @@
-const rounds = document.querySelector('.rounds');
-const rolesButtons = document.querySelectorAll('.button');
-const gameSituation = document.querySelector('.situation')
-
 let myScore = 0;
 let enemyScore = 0; 
 let round = 0;
+
+const rounds = document.querySelector('.rounds');
+const rolesButtons = document.querySelectorAll('.button');
+const gameSituation = document.querySelector('.situation');
+const enemyImage = document.querySelector('.enemy-role-img');
+const main = document.querySelector('main');
+
+const restartButtonContainer = document.createElement('div');
+const restartButton = document.createElement('button');
 
 function countRounds() {
     round += 1;
@@ -13,6 +18,14 @@ function countRounds() {
 }
 
 
+function buttonFunc() {
+    restartButtonContainer.setAttribute('class', 'restartButtonContainer');
+    restartButton.setAttribute('class', "restartButton");
+    restartButton.textContent = 'リスタート'
+    restartButtonContainer.appendChild(restartButton);
+    main.appendChild(restartButtonContainer);
+}
+
 function getComputerChoice() {
     const roles = ['ryoushi', 'kitsune', 'shouya'];
     const computerSelection = Math.floor(Math.random() * roles.length);
@@ -20,6 +33,21 @@ function getComputerChoice() {
 }
 
 function oneRound(playerSelection, computerSelection) {
+
+    switch (true) {
+        case (computerSelection === 0) :
+            enemyImage.setAttribute('src', "./resources/ryoushi.svg");
+            enemyImage.setAttribute('width', "80");
+            break;
+        case (computerSelection === 1) :
+            enemyImage.setAttribute('src', "./resources/kitsune.svg");
+            enemyImage.setAttribute('width', "155");
+            break;
+        case (computerSelection === 2) :
+            enemyImage.setAttribute('src', "./resources/shouya.svg");
+            enemyImage.setAttribute('width', "130");
+            break;
+    }
     switch (true) {
         case (playerSelection === computerSelection) :
             switch (true) {
@@ -67,16 +95,24 @@ function oneRound(playerSelection, computerSelection) {
     const score2 = document.querySelector('.enemy-score');
     score1.innerText = `お客様の得点 : ${myScore}`;
     score2.innerText = `敵の得点 : ${enemyScore}`;
-    return [myScore, enemyScore];
+    return;
 }
 
 function endGame(playerScore, computerScore) {
     if (playerScore === 3) {
-        gameSituation.innerText = "You WON!";
+        gameSituation.setAttribute('class', "winner");
+        gameSituation.innerText = '結果：お客様の勝利';
+        buttonFunc();
+        rolesButtons.forEach((role) => role.disabled = true);    
     }
     else if (computerScore === 3) {
-        gameSituation.innerText = "Enemy WON!";
+        gameSituation.setAttribute('class', "winner");
+        gameSituation.innerText = '結果：敵の勝利!';
+        buttonFunc();
+        rolesButtons.forEach((role) => role.disabled = true);
     }
+    restartButton.addEventListener('click', () => window.location.reload());
+
 }
 
 
@@ -84,7 +120,6 @@ function playGame() {
     let playerSelection;
     rolesButtons.forEach((role) => {
         role.addEventListener('click', () => {
-            const roleImage = document.querySelectorAll('.role-image');
             if (role.classList.contains('hunter')) {
                 playerSelection = 0;
             } else if (role.classList.contains('fox')) {
@@ -95,6 +130,7 @@ function playGame() {
             countRounds();
             oneRound(playerSelection, getComputerChoice());
             endGame(myScore, enemyScore);
+            return
         });
     });
 }
